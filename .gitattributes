@@ -1,0 +1,2 @@
+scp.db filter=lfs diff=lfs merge=lfs -text
+scp_terminal/scp.db filter=lfs diff=lfs merge=lfs -text

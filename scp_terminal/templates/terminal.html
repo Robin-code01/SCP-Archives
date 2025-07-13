@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+
+{% block title %} SCP-Archives {% endblock %}
+
+{% block style %} {{ scp["style"] | safe}} {% endblock %}
+
+{% block body %} {{ scp["full_article_html"] | safe}} {% endblock %}
