@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap");
+
+@font-face {
+  font-family: "Departure";
+  src: url("assets/DepartureMono-1.500/DepartureMono-Regular.woff2");
+}
+
+:root {
+  --bs-body-font-family: "Departure";
+  --bs-body-font-size: 120%;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: row;
+}
+
+.bob0 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0;
+  filter: invert(100%);
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.bob1 {
+  margin: 0;
+  padding: 0;
+}
+
+#welcome {
+  font-weight: 800;
+  font-size: 4em;
+}
+
+.gradient-text {
+  font-family: "Manufacturing Consent", system-ui;
+  font-size: 300%;
+  font-weight: 400;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, #3b82f6, #9333ea, #db2777);
+  background-size: 200% auto;
+  background-position: 100% 50%;
+  animation: gradient 8s linear infinite;
+  animation-name: gradient;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-timeline: 8s;
+}
+
+.dropdown-item {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.main-greet {
+  background-image: url("assets/mercury-diagram.svg");
+  background-size: 55em;
+  background-position-x: -4%;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+
+.centered {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-height: 84vh;
+}
+
+.centered-left {
+  display: flex;
+  place-items: left;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-height: 24em;
+}
+
+.main-text {
+  padding: 100px 14% 14em 16%;
+  gap: 20px;
+  position: absolute;
+  background-image: url("assets/highlighter-outline.svg");
+  background-repeat: no-repeat;
+  background-position: center 0%;
+  font-weight: 600;
+}
+
+.auto-type {
+  display: inline;
+  gap: 0;
+}
+
+#intro {
+  font-size: 2.8em;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-height: 84vh;
+}

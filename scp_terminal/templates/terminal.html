@@ -1,7 +1,31 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCP Archives</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.x.x/js/jquery.terminal.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.x.x/css/jquery.terminal.min.css" />
 
-{% block title %} SCP-Archives {% endblock %}
+</head>
+    <body id="terminal">
+    <template id="greetings">
 
-{% block style %} {{ scp["style"] | safe}} {% endblock %}
 
-{% block body %} {{ scp["full_article_html"] | safe}} {% endblock %}
+▄▄▄█████▓ ██░ ██ ▓█████      ██████  ▄████▄   ██▓███      ▄▄▄       ██▀███   ▄████▄   ██░ ██  ██▓ ██▒   █▓▓█████   ██████ 
+▓  ██▒ ▓▒▓██░ ██▒▓█   ▀    ▒██    ▒ ▒██▀ ▀█  ▓██░  ██▒   ▒████▄    ▓██ ▒ ██▒▒██▀ ▀█  ▓██░ ██▒▓██▒▓██░   █▒▓█   ▀ ▒██    ▒ 
+▒ ▓██░ ▒░▒██▀▀██░▒███      ░ ▓██▄   ▒▓█    ▄ ▓██░ ██▓▒   ▒██  ▀█▄  ▓██ ░▄█ ▒▒▓█    ▄ ▒██▀▀██░▒██▒ ▓██  █▒░▒███   ░ ▓██▄   
+░ ▓██▓ ░ ░▓█ ░██ ▒▓█  ▄      ▒   ██▒▒▓▓▄ ▄██▒▒██▄█▓▒ ▒   ░██▄▄▄▄██ ▒██▀▀█▄  ▒▓▓▄ ▄██▒░▓█ ░██ ░██░  ▒██ █░░▒▓█  ▄   ▒   ██▒
+  ▒██▒ ░ ░▓█▒░██▓░▒████▒   ▒██████▒▒▒ ▓███▀ ░▒██▒ ░  ░    ▓█   ▓██▒░██▓ ▒██▒▒ ▓███▀ ░░▓█▒░██▓░██░   ▒▀█░  ░▒████▒▒██████▒▒
+  ▒ ░░    ▒ ░░▒░▒░░ ▒░ ░   ▒ ▒▓▒ ▒ ░░ ░▒ ▒  ░▒▓▒░ ░  ░    ▒▒   ▓▒█░░ ▒▓ ░▒▓░░ ░▒ ▒  ░ ▒ ░░▒░▒░▓     ░ ▐░  ░░ ▒░ ░▒ ▒▓▒ ▒ ░
+    ░     ▒ ░▒░ ░ ░ ░  ░   ░ ░▒  ░ ░  ░  ▒   ░▒ ░          ▒   ▒▒ ░  ░▒ ░ ▒░  ░  ▒    ▒ ░▒░ ░ ▒ ░   ░ ░░   ░ ░  ░░ ░▒  ░ ░
+  ░       ░  ░░ ░   ░      ░  ░  ░  ░        ░░            ░   ▒     ░░   ░ ░         ░  ░░ ░ ▒ ░     ░░     ░   ░  ░  ░  
+          ░  ░  ░   ░  ░         ░  ░ ░                        ░  ░   ░     ░ ░       ░  ░  ░ ░        ░     ░  ░      ░  
+                                    ░                                       ░                         ░                   
+
+
+    </template>
+    <script src="/static/script.js"></script>
+</body>
+</html>
