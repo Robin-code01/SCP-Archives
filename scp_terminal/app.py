@@ -1,5 +1,5 @@
 from cs50 import SQL
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, redirect, render_template, request, session, jsonify
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from helper import login_required, apology
@@ -21,6 +21,86 @@ scp_db = SQL("sqlite:///scp.db")
 def index():
     # conn = sqlite3.connect("scp.db")
     return render_template("terminal.html")
+
+
+@app.route("/api/command", methods=["POST"])
+@login_required
+def command_handeler():
+    data = request.get_json()
+
+    # Extract values
+    command = data.get("command")
+    value = data.get("value")
+
+    match command:
+        case "access":
+            temp = scp_db.execute("SELECT * FROM scp_entries WHERE id = ?", value)
+            if len(temp) >= 1:
+                return jsonify({
+                    "status": "success",
+                })
+            else:
+                return jsonify({
+                    "status": "error",
+                    "message": "SCP not found",
+                }), 404
+
+        case "list":
+            if value == "all":
+                temp = scp_db.execute("SELECT id FROM scp_entries")
+                return jsonify({
+                    "status": "success",
+                    "list": [row["id"] for row in temp],
+                })
+            elif value in {
+                "Safe",
+                "Euclid",
+                "Keter",
+                "Thaumiel",
+                "Apollyon",
+                "Archon",
+                "Ticonderoga",
+                "Explained",
+                "Neutralized",
+                "Decommissioned",
+                "Pending",
+                "Uncontained"
+            }:
+                temp = scp_db.execute(
+                    "SELECT id FROM scp_entries WHERE classification LIKE ?",
+                    f"%{value}%"
+                )
+                return jsonify({
+                    "status": "success",
+                    "list": [row["id"] for row in temp],
+                })
+            else:
+                return jsonify({
+                    "status": "error",
+                    "message": f"Invalid classification: {value}"
+                }), 400
+
+        case "search":
+            if value:
+                temp = scp_db.execute(
+                    "SELECT id FROM scp_entries WHERE full_article_html LIKE ?",
+                    f"%{value}%"
+                )
+                return jsonify({
+                    "status": "success",
+                    "list": [row["id"] for row in temp],
+                })
+            else:
+                return jsonify({
+                    "status": "error",
+                    "message": f"Enter something to search: {value}"
+                }), 400
+
+        case _:
+            return jsonify({
+                "status": "error",
+                "message": f"Unknown command: {command}"
+            }), 400
 
 
 @app.route("/scp/<scp_id>")
