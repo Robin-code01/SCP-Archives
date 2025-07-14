@@ -34,3 +34,7 @@ Navigate the SCP universe as if you’re accessing the Foundation’s secure sys
 ---
 
 ## ⚡ Setup Instructions
+
+1. Clone the repro
+2. ```pip inatall -r requirements.txt```
+3. ```flask run```
