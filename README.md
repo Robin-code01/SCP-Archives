@@ -10,6 +10,7 @@ SCP Terminal Archives is a web-based application inspired by the SCP Foundation 
 
 ---
 
+
 ## Features
 
 - **User Authentication:** Secure registration and login system with password hashing.
@@ -20,6 +21,12 @@ SCP Terminal Archives is a web-based application inspired by the SCP Foundation 
 - **RESTful API:** `/api/command` endpoint processes terminal commands and returns JSON responses for frontend consumption.
 - **Error Handling:** Custom apology pages for user-friendly error messages.
 - **Responsive Design:** Modern UI with Bootstrap and custom styles for a seamless experience across devices.
+
+---
+
+## Web Scraping for SCP Content
+
+A significant part of this project involved web scraping to populate the `scp.db` database with authentic SCP articles. Using Python libraries such as `requests` and `BeautifulSoup`, I developed scripts to automatically fetch SCP entries from the official SCP Foundation website. The scraper was designed to extract relevant fields, including the SCP ID, classification, custom styles, and the full HTML content of each article. Special care was taken to preserve the original formatting, embedded media, and any unique CSS used in the articles, ensuring that the entries would render accurately within the terminal interface. The scraping process also included error handling for missing or malformed articles and mechanisms to avoid overloading the source website. This automated approach allowed for a rich, up-to-date archive of SCP entries, making the browsing experience within the app both comprehensive and immersive.
 
 ---
 
@@ -73,7 +80,7 @@ SCP Terminal Archives is a web-based application inspired by the SCP Foundation 
 
 ## How to Run
 
-1. Install dependencies: `pip install flask flask-session cs50 werkzeug`
+1. Install dependencies: `pip install -r requirements.txt`
 2. Ensure `scp.db` and `users.db` are present in the project directory.
 3. Run the app: `flask run` or `python app.py`
 4. Access the site at `http://localhost:5000/`
